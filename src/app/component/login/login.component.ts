@@ -10,16 +10,17 @@ import {  Router } from '@angular/router';
 })
 export class LoginComponent {
 
+
     loginObj: any = {
       "email": "",
       "password": ""
     };
 
+
     constructor(private http: HttpClient, private router: Router){}
 
     onLogin(){
       console.log('Before HTTP Request');
-
       this.http.post('http://localhost:8080/api/users/authenticate',this.loginObj).subscribe((res:any)=>{
       debugger;
         if(res!=null){
@@ -33,5 +34,6 @@ export class LoginComponent {
 
       })
     }
+
 
 }
